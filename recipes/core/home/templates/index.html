@@ -1,0 +1,42 @@
+  {% extends "base.html"%}
+   
+  {%block start%}
+
+    <h1> hey this is the new index page </h1>
+     
+    <a href="home/contact/"> contact
+</a>
+|
+<a href="/about/"> about
+</a>
+      <table class="container">
+        <tr>
+          <th>sno</th>
+          <th>name</th>
+          <th>age</th>
+          <th> Can vote</th>
+        </tr>
+        {% for people in one %}
+        <tr>
+          <td> {{forloop.counter}}</td>
+          <td>{{people.name}}</td>
+          <td>{{people.age}}</td>
+          <td>{%if people.age > 18 %}👍{%else%}👎{%endif%}</td>
+        </tr>
+        {%endfor%}
+        </tr>
+      </table>
+      {%if 'carrot' in vegs %}
+      carrot is present 
+      {%else%}
+      not present
+      {%endif%}
+    
+      
+      
+{%endblock%}
+
+    
+     
+     
+
